@@ -36,6 +36,7 @@ const AdminPage = () => {
           p.votes && p.votes.length > 0
             ? p.votes.reduce((acc, v) => acc + v.score, 0) / p.votes.length
             : 0,
+        number:p.votes.length,    
       }));
     },
   });
@@ -186,8 +187,10 @@ const AdminPage = () => {
                   </span>
                 </div>
               </div>
+              <div className="flex gap-4" >
               <p className="text-sm text-center mt-2">Score: <span className="font-bold">{participant.score}</span></p>
-
+              <p className="text-sm text-center mt-2">No of people Voted: <span className="font-bold">{participant.number}</span></p>
+              </div>
               <div className="flex gap-2 mt-3 w-full">
                 <button
                   onClick={() => {
