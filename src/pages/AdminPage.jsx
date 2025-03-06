@@ -215,8 +215,8 @@ const AdminPage = () => {
         </div>
       )}
 
-      {/* Dialog (Modal) */}
-      {isDialogOpen && (
+       {/* Dialog (Modal) */}
+       {isDialogOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-96">
             <h2 className="text-xl font-bold mb-4">
@@ -227,15 +227,68 @@ const AdminPage = () => {
                 type="text"
                 placeholder="Name"
                 value={formData.name}
-                onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, name: e.target.value }))
+                }
+                className="w-full px-3 py-2 border rounded-lg"
+                required
+              />
+              <input
+                type="text"
+                placeholder="Event Name"
+                value={formData.eventName}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    eventName: e.target.value,
+                  }))
+                }
+                className="w-full px-3 py-2 border rounded-lg"
+                required
+              />
+              <input
+                type="url"
+                placeholder="Photo URL"
+                value={formData.photoUrl}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, photoUrl: e.target.value }))
+                }
+                className="w-full px-3 py-2 border rounded-lg"
+                required
+              />
+              <input
+                type="datetime-local"
+                value={formData.startTime}
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    startTime: e.target.value,
+                  }))
+                }
+                className="w-full px-3 py-2 border rounded-lg"
+                required
+              />
+              <input
+                type="datetime-local"
+                value={formData.endTime}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, endTime: e.target.value }))
+                }
                 className="w-full px-3 py-2 border rounded-lg"
                 required
               />
               <div className="flex justify-end gap-2">
-                <button type="button" onClick={() => setIsDialogOpen(false)} className="px-4 py-2 bg-gray-300 rounded-lg">
+                <button
+                  type="button"
+                  onClick={() => setIsDialogOpen(false)}
+                  className="px-4 py-2 bg-gray-300 rounded-lg"
+                >
                   Cancel
                 </button>
-                <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded-lg">
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg"
+                >
                   {selectedParticipant ? "Update" : "Add"}
                 </button>
               </div>
