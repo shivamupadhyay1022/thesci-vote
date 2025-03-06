@@ -186,6 +186,8 @@ const AdminPage = () => {
                   </span>
                 </div>
               </div>
+              <p className="text-sm text-center mt-2">Score: <span className="font-bold">{participant.score}</span></p>
+
               <div className="flex gap-2 mt-3 w-full">
                 <button
                   onClick={() => {
