@@ -8,6 +8,7 @@ import AdminPage from "./pages/AdminPage";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
+import Footer from "./pages/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,6 +23,7 @@ function App() {
             <Route path="/admin" element={<AdminPage />} />
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </QueryClientProvider>
     </>
